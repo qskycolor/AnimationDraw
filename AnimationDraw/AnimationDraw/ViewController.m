@@ -10,12 +10,15 @@
 #import "Animator.h"
 #import "ShapeFactory.h"
 #import "Canvas.h"
+#import "Bezier.h"
 
 @interface ViewController ()<AnimatorDelegate>
 
 @property (nonatomic, strong) UIView *cursor;
 @property (nonatomic, strong) Canvas *canvas;
 @property (nonatomic, strong) Animator *animator;
+
+@property (nonatomic, strong) NSMutableArray *spotArray;
 
 @end
 
@@ -81,6 +84,10 @@
 - (void)createAnimationShape:(ShapeType)type {
     if (self.animator) {
         [self.animator invalidate];
+        for (UILabel *spotLabel in self.spotArray) {
+            [spotLabel removeFromSuperview];
+        }
+        [self.spotArray removeAllObjects];
     }
     Shape *shape = [ShapeFactory createShapeWithType:type];
     AnimationPoint *startPoint = [[AnimationPoint alloc]initWithX:CGRectGetMinX(_cursor.frame) y:CGRectGetMinY(_cursor.frame)];
@@ -88,6 +95,19 @@
     Animator *animator = [Animator animateOnTarget:_cursor
                                          evaluator:shape
                                             values:@[startPoint, endPoint]];
+    // 描随机点
+    if (type == ShapeTypeBezier) {
+        Bezier *bezier = (Bezier *)shape;
+        NSInteger count = [[bezier getSpots] count];
+        for (int i = 0; i < count; i++) {
+            CGPoint point = CGPointFromString([bezier getSpots][i]);
+            UILabel *spotLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, 70, 30)];
+            spotLabel.text = [NSString stringWithFormat:@"第%@个点", @(i+1)];
+            spotLabel.textColor = [UIColor blackColor];
+            [self.view addSubview:spotLabel];
+            [self.spotArray addObject:spotLabel];
+        }
+    }
     [animator setDuration:6];
     [animator setDelegate:self];
     [animator start];
@@ -120,5 +140,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Getter
+
+- (NSMutableArray *)spotArray
+{
+    if (!_spotArray) {
+        _spotArray = [[NSMutableArray alloc] init];
+    }
+    return _spotArray;
+}
 
 @end
