@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "AnimationPoint.h"
 
 typedef NS_ENUM(NSInteger, ShapeType) {
@@ -21,7 +20,6 @@ typedef NS_ENUM(NSInteger, ShapeType) {
 @protocol Shape <NSObject>
 
 @property (nonatomic, assign) ShapeType type;
-@property (nonatomic, assign) UIBezierPath *path;
 @property (nonatomic, strong) NSMutableArray *points;
 
 - (AnimationPoint *)evaluate:(float)fraction
@@ -33,7 +31,6 @@ typedef NS_ENUM(NSInteger, ShapeType) {
 @interface Shape : NSObject<Shape>
 
 @property (nonatomic, assign) ShapeType type;
-@property (nonatomic, assign) UIBezierPath *path;
 @property (nonatomic, strong) NSMutableArray *points;
 
 - (void)clear;
