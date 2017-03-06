@@ -20,6 +20,8 @@
 		A35541DC1E69002800D8A3E9 /* Sine.m in Sources */ = {isa = PBXBuildFile; fileRef = A35541D61E69002800D8A3E9 /* Sine.m */; };
 		A35541DF1E69402400D8A3E9 /* ShapeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A35541DE1E69402400D8A3E9 /* ShapeFactory.m */; };
 		A35541E21E6955DB00D8A3E9 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A35541E11E6955DB00D8A3E9 /* Circle.m */; };
+		D4572CD41E6CFC59008BEF9E /* Bezier.m in Sources */ = {isa = PBXBuildFile; fileRef = D4572CD11E6CFC59008BEF9E /* Bezier.m */; };
+		D4572CD51E6CFC59008BEF9E /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = D4572CD31E6CFC59008BEF9E /* Rectangle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,10 @@
 		A35541DE1E69402400D8A3E9 /* ShapeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeFactory.m; sourceTree = "<group>"; };
 		A35541E01E6955DB00D8A3E9 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
 		A35541E11E6955DB00D8A3E9 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		D4572CD01E6CFC59008BEF9E /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
+		D4572CD11E6CFC59008BEF9E /* Bezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bezier.m; sourceTree = "<group>"; };
+		D4572CD21E6CFC59008BEF9E /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		D4572CD31E6CFC59008BEF9E /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,10 @@
 				A35541D61E69002800D8A3E9 /* Sine.m */,
 				A35541E01E6955DB00D8A3E9 /* Circle.h */,
 				A35541E11E6955DB00D8A3E9 /* Circle.m */,
+				D4572CD01E6CFC59008BEF9E /* Bezier.h */,
+				D4572CD11E6CFC59008BEF9E /* Bezier.m */,
+				D4572CD21E6CFC59008BEF9E /* Rectangle.h */,
+				D4572CD31E6CFC59008BEF9E /* Rectangle.m */,
 				A35541DD1E69402400D8A3E9 /* ShapeFactory.h */,
 				A35541DE1E69402400D8A3E9 /* ShapeFactory.m */,
 			);
@@ -215,10 +225,12 @@
 				A35541DC1E69002800D8A3E9 /* Sine.m in Sources */,
 				A35541BC1E68FFEC00D8A3E9 /* ViewController.m in Sources */,
 				A35541DB1E69002800D8A3E9 /* Shape.m in Sources */,
+				D4572CD41E6CFC59008BEF9E /* Bezier.m in Sources */,
 				A35541D71E69002800D8A3E9 /* AnimationPoint.m in Sources */,
 				A35541B91E68FFEC00D8A3E9 /* AppDelegate.m in Sources */,
 				A35541B61E68FFEC00D8A3E9 /* main.m in Sources */,
 				A35541D91E69002800D8A3E9 /* Canvas.m in Sources */,
+				D4572CD51E6CFC59008BEF9E /* Rectangle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +389,7 @@
 				A35541CA1E68FFEC00D8A3E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

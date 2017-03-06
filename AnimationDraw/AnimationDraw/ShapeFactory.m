@@ -9,6 +9,8 @@
 #import "ShapeFactory.h"
 #import "Sine.h"
 #import "Circle.h"
+#import "Bezier.h"
+#import "Rectangle.h"
 
 @implementation ShapeFactory
 
@@ -31,10 +33,14 @@
             break;
             
         case ShapeTypeBezier:
+        {
+            shape = [Bezier bezierWithspotCount:5];
+        }
+            break;
             
         case ShapeTypeRectangle:
         {
-            
+            shape = [Rectangle rectangleWithCenter:[[AnimationPoint alloc]initWithX:200 y:400] length:200 width:150];
             
         }
             break;
